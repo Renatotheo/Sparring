@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conectar Bluetooth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/connectButton"
+        android:layout_marginTop="20dp"/>
+
+
+    <GridLayout
+        android:id="@+id/buttonGridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connectButton"
+        android:layout_marginTop="20dp"
+        android:columnCount="2">
+
+        <Button
+            android:id="@+id/forcaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Força"
+            android:layout_gravity="start"/>
+
+        <Button
+            android:id="@+id/velocidadeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Velocidade"
+            android:layout_gravity="end"/>
+
+        <Button
+            android:id="@+id/reacaoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reação"
+            android:layout_gravity="start"/>
+
+        <Button
+            android:id="@+id/resistenciaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resistência"
+            android:layout_gravity="end"/>
+    </GridLayout>
+</RelativeLayout>
