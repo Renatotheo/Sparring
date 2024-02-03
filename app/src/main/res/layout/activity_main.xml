@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <!-- LinearLayout para os botões Força, Velocidade, Reação e Resistência -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/forcaButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Força"/>
+
+        <Button
+            android:id="@+id/velocidadeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Velocidade"/>
+
+        <Button
+            android:id="@+id/reacaoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reação"/>
+
+        <Button
+            android:id="@+id/resistenciaButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Resistência"/>
+    </LinearLayout>
+
+    <!-- Button para conectar Bluetooth -->
     <Button
         android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Conectar Bluetooth"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- FrameLayout para os fragments -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/connectButton"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="20dp"/>
 
-
-    <GridLayout
-        android:id="@+id/buttonGridLayout"
+    <!-- RecyclerView para a lista de dispositivos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deviceRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/connectButton"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="20dp"
-        android:columnCount="2">
+        android:background="@android:color/white" />
 
-        <Button
-            android:id="@+id/forcaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Força"
-            android:layout_gravity="start"/>
-
-        <Button
-            android:id="@+id/velocidadeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Velocidade"
-            android:layout_gravity="end"/>
-
-        <Button
-            android:id="@+id/reacaoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reação"
-            android:layout_gravity="start"/>
-
-        <Button
-            android:id="@+id/resistenciaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resistência"
-            android:layout_gravity="end"/>
-    </GridLayout>
-</RelativeLayout>
+</LinearLayout>
